@@ -24,11 +24,7 @@ public class Day1 {
                        .mapToInt(Character::getNumericValue)
                        .boxed().toList();
 
-               if (arrayOfNumbers.size() == 1){
-                   listOfNumbers.add(Integer.valueOf(String.valueOf(arrayOfNumbers.get(0)) + arrayOfNumbers.get(0)));
-               } else {
-                   listOfNumbers.add(Integer.valueOf(String.valueOf(arrayOfNumbers.get(0)) + arrayOfNumbers.get(arrayOfNumbers.size() - 1)));
-               }
+                listOfNumbers.add(Integer.valueOf(String.valueOf(arrayOfNumbers.get(0)) + (arrayOfNumbers.size() == 1 ? arrayOfNumbers.get(0) : arrayOfNumbers.get(arrayOfNumbers.size() - 1))));
             }
 
             int sum = listOfNumbers.stream()
