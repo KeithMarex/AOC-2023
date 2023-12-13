@@ -117,7 +117,8 @@ public class Day3 {
     }
 
     private List<Integer> retrieveNumbersByCoordinates(Coordinates[] arrayOfCoordinates){
-        List<Integer> listOfAdjacentNumbers = new ArrayList<>();
+         // Make use of a set to eliminate duplicates
+        Set<Integer> listOfAdjacentNumbers = new HashSet<>();
          // Retrieve numbers on location + adjacent to that to retrieve the whole number
         for (Coordinates coordinates: arrayOfCoordinates){
             // For char on coordinate, check if digit
@@ -128,7 +129,7 @@ public class Day3 {
             }
         }
 
-        return listOfAdjacentNumbers;
+        return listOfAdjacentNumbers.stream().toList();
     }
 
     /*
